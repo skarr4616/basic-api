@@ -4,7 +4,14 @@ const mongoose = require("mongoose");
 //     useUnifiedTopology: true,
 // });
 
-mongoose.connect("mongodb+srv://Skarr:rhGRUVMWnuy7gnlh@cluster0.k67mdzd.mongodb.net/notes-db?retryWrites=true&w=majority", {
+const {
+    DB_URL,
+    DB_USERNAME,
+    DB_PASSWORD,
+    DB_NAME
+} = process.env;
+
+mongoose.connect(`mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_URL}/${DB_NAME}?retryWrites=true&w=majority`, {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
 });

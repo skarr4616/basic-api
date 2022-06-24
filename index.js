@@ -1,5 +1,6 @@
 const { response } = require('express');
-const express = require('express'); 
+const express = require('express');
+require('dotenv').config(); 
 const cors = require('cors');
 const { notesRouter } = require("./api/v1/index");
 require('./db/db');
